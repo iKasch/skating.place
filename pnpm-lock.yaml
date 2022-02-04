@@ -5,12 +5,14 @@ specifiers:
   '@astrojs/renderer-svelte': ^0.3.1
   astro: ^0.22.20
   prettier-plugin-astro: ^0.0.12
+  sass: ^1.49.7
 
 devDependencies:
   '@astrojs/renderer-react': 0.4.1
-  '@astrojs/renderer-svelte': 0.3.1
+  '@astrojs/renderer-svelte': 0.3.1_sass@1.49.7
   astro: 0.22.20
   prettier-plugin-astro: 0.0.12
+  sass: 1.49.7
 
 packages:
 
@@ -119,13 +121,13 @@ packages:
       - '@babel/core'
     dev: true
 
-  /@astrojs/renderer-svelte/0.3.1:
+  /@astrojs/renderer-svelte/0.3.1_153ba4c0bb2edfa6fab9e9ab5216af52:
     resolution: {integrity: sha512-upK/Mm00wI8xWqxiSjBV4SuDCSh3hsafLzORvy5vjpd2Czw8LM4c2SdlegBD1vtzbFUc1CnwZqNGdhCSbSHJYA==}
     engines: {node: ^14.15.0 || >=16.0.0}
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 1.0.0-next.30_svelte@3.46.4
+      '@sveltejs/vite-plugin-svelte': 1.0.0-next.30_svelte@3.46.4+vite@2.6.14
       svelte: 3.46.4
-      svelte-preprocess: 4.10.2_svelte@3.46.4
+      svelte-preprocess: 4.10.2_f1a9c938a7b2938d3de4ace69ea7c94f
     transitivePeerDependencies:
       - '@babel/core'
       - coffeescript
@@ -143,13 +145,13 @@ packages:
       - vite
     dev: true
 
-  /@astrojs/renderer-svelte/0.3.1_153ba4c0bb2edfa6fab9e9ab5216af52:
+  /@astrojs/renderer-svelte/0.3.1_sass@1.49.7:
     resolution: {integrity: sha512-upK/Mm00wI8xWqxiSjBV4SuDCSh3hsafLzORvy5vjpd2Czw8LM4c2SdlegBD1vtzbFUc1CnwZqNGdhCSbSHJYA==}
     engines: {node: ^14.15.0 || >=16.0.0}
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 1.0.0-next.30_svelte@3.46.4+vite@2.6.14
+      '@sveltejs/vite-plugin-svelte': 1.0.0-next.30_svelte@3.46.4
       svelte: 3.46.4
-      svelte-preprocess: 4.10.2_f1a9c938a7b2938d3de4ace69ea7c94f
+      svelte-preprocess: 4.10.2_sass@1.49.7+svelte@3.46.4
     transitivePeerDependencies:
       - '@babel/core'
       - coffeescript
@@ -3755,7 +3757,7 @@ packages:
       svelte: 3.46.4
     dev: true
 
-  /svelte-preprocess/4.10.2_svelte@3.46.4:
+  /svelte-preprocess/4.10.2_sass@1.49.7+svelte@3.46.4:
     resolution: {integrity: sha512-aPpkCreSo8EL/y8kJSa1trhiX0oyAtTjlNNM7BNjRAsMJ8Yy2LtqHt0zyd4pQPXt+D4PzbO3qTjjio3kwOxDlA==}
     engines: {node: '>= 9.11.2'}
     requiresBuild: true
@@ -3800,6 +3802,7 @@ packages:
       '@types/sass': 1.43.1
       detect-indent: 6.1.0
       magic-string: 0.25.7
+      sass: 1.49.7
       sorcery: 0.10.0
       strip-indent: 3.0.0
       svelte: 3.46.4
