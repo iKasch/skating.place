@@ -3,22 +3,30 @@ const { city, background } = Astro.props
 ---
 
 <a href={city} class="cityCard" style="background-image: url(${background});">
-  {city}
+  <span>
+    {city}
+  </span>
 </a>
 
 <style lang="scss">
   .cityCard {
-    background-size: cover;
+    align-items: center;
     background-position: center;
+    background-size: cover;
     border-radius: 10px;
+    color: white;
+    display: flex;
+    font-size: 30px;
     height: 80px;
     padding: 10px;
     position: relative;
-    width: 100%;
-    color: white;
-    font-size: 30px;
     text-decoration: none;
     text-transform: capitalize;
+    width: 100%;
+
+    span {
+      z-index: 3;
+    }
 
     &:before {
       content: "";

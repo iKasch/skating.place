@@ -1,0 +1,60 @@
+---
+const { spot } = Astro.props
+---
+
+<a href={spot.url} class="skateSpot" style="background-image: url(${spot.image});">
+  <span class="title">
+    {spot.title}
+  </span>
+</a>
+
+<style lang="scss">
+  .skateSpot {
+    align-items: center;
+    background-color: #efe9f6;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    color: #5f3492;
+    display: flex;
+    margin-bottom: 30px;
+    padding: 20px;
+    position: relative;
+    text-decoration: none;
+    text-transform: capitalize;
+    &:after {
+      content: "";
+      background: #ece1ff;
+      border-radius: 10px;
+      height: 100%;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 5%;
+      width: 94%;
+      z-index: -1;
+    }
+    .title {
+      font-size: 30px;
+    }
+    .images {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      img {
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+
+        &:first-child {
+          margin-right: 10px;
+        }
+        &:last-child {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+</style>
