@@ -1,9 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
+import City from "../components/City.astro"
+import background from "./hamburg/hamburg.jpg"
 ---
 
 <BaseLayout>
   <div class="container">
-    <a href="/hamburg/">Hamburg</a>
+    <City city="hamburg" background={background} />
   </div>
 </BaseLayout>
