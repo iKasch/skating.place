@@ -6,5 +6,12 @@ import City from "../components/City.astro"
 <BaseLayout>
   <div class="container">
     <City city="hamburg" background="/assets/images/hamburg.jpg" />
+    <City city="berlin" background="/assets/images/berlin.jpg" />
   </div>
 </BaseLayout>
+
+<style>
+  .container {
+    flex-direction: column;
+  }
+</style>
