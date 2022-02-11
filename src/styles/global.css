@@ -11,9 +11,13 @@
   font-size: clamp(0.875rem, 0.4626rem + 1.0309vw + var(--user-font-scale), 1.125rem);
 }
 
+body {
+  background-color: #f6f5f8;
+}
+
 .container {
   display: flex;
   max-width: 1200px;
   margin: auto;
-  justify-content: center;
+  padding: 0 10px;
 }

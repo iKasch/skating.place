@@ -1,0 +1,59 @@
+---
+const { city, background } = Astro.props
+---
+
+<a href={city} class="cityCard" style="background-image: url(${background});">
+  <span>
+    {city}
+  </span>
+</a>
+
+<style lang="scss">
+  .cityCard {
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    font-size: 30px;
+    height: 80px;
+    padding: 10px;
+    position: relative;
+    text-decoration: none;
+    text-transform: capitalize;
+    width: 100%;
+    margin-bottom: 30px;
+
+    span {
+      z-index: 3;
+    }
+
+    &:before {
+      content: "";
+      background: linear-gradient(to right, #bba2e1, #d0beef);
+      opacity: 0.3;
+      height: 100%;
+      border-radius: 10px;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1;
+    }
+    &:after {
+      content: "";
+      background: #ece1ff;
+      border-radius: 10px;
+      height: 100%;
+      left: 0;
+      margin: auto;
+      position: absolute;
+      right: 0;
+      top: 10%;
+      width: 97%;
+      z-index: -1;
+    }
+  }
+</style>
