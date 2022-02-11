@@ -4,7 +4,7 @@ import SkateSpot from "../../components/SkateSpot.astro"
 const spots = Astro.fetchContent("./**/*.md")
 ---
 
-<BaseLayout title="Hamburg | Skating Places">
+<BaseLayout title="Berlin | Skating Places">
   <div class="container">
     {spots.map((spot) => <SkateSpot spot={spot} />)}
   </div>
