@@ -1,17 +1,17 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
-import City from "../components/City.astro"
 ---
 
 <BaseLayout>
-  <div class="container">
-    <City city="hamburg" background="/assets/images/hamburg.jpg" />
-    <City city="berlin" background="/assets/images/berlin.jpg" />
-  </div>
+  <div class="container">There will be skating places soon! ✌️</div>
 </BaseLayout>
 
 <style>
   .container {
-    flex-direction: column;
+    height: 100vh;
+    height: -webkit-fill-available;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 </style>
