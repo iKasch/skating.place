@@ -7,7 +7,7 @@ local_backend: true
 media_folder: "public/assets/images"
 public_folder: "/assets/images"
 editor:
-  preview: false
+  preview: true
 collections:
   - label: "Cities"
     name: "cities"
