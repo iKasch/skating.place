@@ -13,7 +13,6 @@
     "@astrojs/renderer-react": "^0.4.1",
     "astro": "^0.22.20",
     "netlify-cms-app": "^2.15.66",
-    "netlify-cms-oauth-provider-node": "^2.0.0",
     "prettier-plugin-astro": "^0.0.12",
     "sass": "^1.49.7"
   }

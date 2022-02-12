@@ -2,9 +2,6 @@
 backend:
   name: git-gateway
   branch: main
-  repo: iKasch/skating.place
-  base_url: https://skating.place
-  auth_endpoint: api/auth
 publish_mode: editorial_workflow
 local_backend: true
 media_folder: "public/assets/images"
@@ -14,7 +11,7 @@ editor:
 collections:
   - label: "Cities"
     name: "cities"
-    folder: "src/content/cities"
+    folder: "src/pages/cities"
     slug: "city-{{name}}"
     create: true
     fields:
@@ -22,10 +19,9 @@ collections:
       - { label: "Content", name: "body", widget: "markdown", required: false }
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Managing Community", name: "community", widget: "string", required: false }
-      - { label: "Slug", name: "slug", widget: "string", required: false }
   - label: "Skatespots"
     name: "skatespots"
-    folder: "src/content/skatespots"
+    folder: "src/pages/skatespots"
     slug: "skatespot-{{shortname}}"
     create: true
     fields:
@@ -41,4 +37,3 @@ collections:
           value_field: "name",
           search_fields: ["name"],
         }
-      - { label: "Nicht gelistet", name: "notListed", widget: "boolean", required: false }
