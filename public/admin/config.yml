@@ -11,7 +11,7 @@ editor:
 collections:
   - label: "Cities"
     name: "cities"
-    folder: "src/pages/cities"
+    folder: "src/content/cities"
     slug: "city-{{name}}"
     create: true
     fields:
@@ -21,7 +21,7 @@ collections:
       - { label: "Managing Community", name: "community", widget: "string", required: false }
   - label: "Skatespots"
     name: "skatespots"
-    folder: "src/pages/skatespots"
+    folder: "src/content/skatespots"
     slug: "skatespot-{{shortname}}"
     create: true
     fields:
