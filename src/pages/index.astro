@@ -7,12 +7,15 @@ const cities = Astro.fetchContent("../content/cities/*.md")
 
 <BaseLayout>
   <div class="container">
-    {cities.map((city) => <City {city} />)}
+    <div class="container">There will be skating places soon! ✌️</div>
   </div>
 </BaseLayout>
 
 <style>
   .container {
+    height: 100vh;
+    height: -webkit-fill-available;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
   }
