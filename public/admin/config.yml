@@ -1,0 +1,39 @@
+# public/admin/config.yml
+backend:
+  name: git-gateway
+  branch: main
+publish_mode: editorial_workflow
+local_backend: true
+media_folder: "public/assets/images"
+public_folder: "/assets/images"
+editor:
+  preview: true
+collections:
+  - label: "Cities"
+    name: "cities"
+    folder: "src/content/cities"
+    slug: "city-{{name}}"
+    create: true
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Content", name: "body", widget: "markdown", required: false }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Managing Community", name: "community", widget: "string", required: false }
+  - label: "Skatespots"
+    name: "skatespots"
+    folder: "src/content/skatespots"
+    slug: "skatespot-{{shortname}}"
+    create: true
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Shortname", name: "shortname", widget: "string", required: false }
+      - { label: "Content", name: "body", widget: "markdown", required: false }
+      - { label: "Image", name: "image", widget: "image" }
+      - {
+          label: "City",
+          name: "city",
+          widget: "relation",
+          collection: "cities",
+          value_field: "name",
+          search_fields: ["name"],
+        }

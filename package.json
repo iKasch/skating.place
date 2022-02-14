@@ -6,11 +6,13 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "cmsproxy": "npx netlify-cms-proxy-server"
   },
   "devDependencies": {
     "@astrojs/renderer-react": "^0.4.1",
     "astro": "^0.22.20",
+    "netlify-cms-app": "^2.15.66",
     "prettier-plugin-astro": "^0.0.12",
     "sass": "^1.49.7"
   }

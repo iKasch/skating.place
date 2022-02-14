@@ -1,10 +1,20 @@
 ---
-const { city, background } = Astro.props
+export interface Props {
+  city: {
+    name: string
+    image: string
+    community?: string
+  }
+}
+const { city } = Astro.props
+const { name, image, slug } = city
+
+const url = slug?.length > 0 ? slug : name.toLowerCase()
 ---
 
-<a href={city} class="cityCard" style="background-image: url(${background});">
+<a href="/${url}" class="cityCard" style="background-image: url(${image});">
   <span>
-    {city}
+    {name}
   </span>
 </a>
 
