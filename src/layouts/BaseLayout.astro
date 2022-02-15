@@ -1,6 +1,6 @@
 ---
 // import Header from "../components/Header.astro"
-const { title = "Skating Place" } = Astro.props
+const { title } = Astro.props
 ---
 
 <html>
@@ -8,7 +8,7 @@ const { title = "Skating Place" } = Astro.props
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
 
-    <title>{title}</title>
+    <title>{title} - Skating Places</title>
 
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="stylesheet" type="text/css" href={Astro.resolve("../styles/global.css")} />

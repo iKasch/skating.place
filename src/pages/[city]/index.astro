@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro"
+import SkateSpotListItem from "../../components/SkateSpot/SkateSpotListItem.astro"
+
+export async function getStaticPaths() {
+  const cities = Astro.fetchContent("../../content/cities/*.md")
+
+  return cities.map((city) => {
+    return {
+      params: { city: city?.slug?.length > 0 ? city.slug : city.name.toLowerCase() },
+      props: { city },
+    }
+  })
+}
+
+type Spots = {
+  name: string
+  shortname: string
+  image: string
+  city: string
+  notListed: boolean
+}[]
+
+const { city } = Astro.props
+
+const spots: Spots = Astro.fetchContent("../../content/skatespots/*.md")
+const localSpots = spots.filter((spot) => spot.city === city.name)
+---
+
+<BaseLayout title={city.name + " | Skating Place"}>
+  <div class="container">
+    {localSpots.map((spot) => !spot.notListed && <SkateSpotListItem spot={spot} />)}
+  </div>
+</BaseLayout>
+
+<style lang="scss">
+  .container {
+    flex-direction: column;
+  }
+</style>

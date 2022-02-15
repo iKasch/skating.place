@@ -1,0 +1,108 @@
+---
+import SkateSpotLayout from "../../layouts/SkateSpotLayout.astro"
+import Breadcrumb from "../../components/common/Breadcrumb.astro"
+
+export async function getStaticPaths() {
+  const skatespots = Astro.fetchContent("../../content/skatespots/*.md")
+
+  return skatespots.map((spot) => {
+    return {
+      params: { city: spot?.city.toLowerCase(), skatespot: spot?.name.toLowerCase() },
+      props: { spot },
+    }
+  })
+}
+
+const { spot } = Astro.props
+const { name, shortname, image, city, content } = spot
+---
+
+<SkateSpotLayout title={`${name} | ${city} | Skating Places`}>
+  <div class="spotImage" style="background-image: url(${image});">
+    <Breadcrumb />
+    <div class="title">
+      <div class="name">
+        {name}
+      </div>
+      <div class="shortname">{shortname}</div>
+    </div>
+  </div>
+  <div class="card">
+    {content.html}
+    <a href="#" target="_blank">Karte</a>
+  </div>
+</SkateSpotLayout>
+
+<style lang="scss">
+  .spotImage {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      display: flex;
+      flex-flow: column;
+      font-family: Comfortaa;
+      margin-top: auto;
+      margin-bottom: auto;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("/assets/gfx/stroke.svg");
+      padding: 25px 0;
+      .name {
+        text-align: center;
+        font-size: 26px;
+        &.light {
+          color: #fff;
+        }
+        color: #3e4953;
+        position: relative;
+        display: inline;
+        margin: auto;
+        &:after {
+          content: "";
+          display: block;
+          background: #ffce32;
+          height: 2px;
+          width: 80%;
+          position: relative;
+          margin: 10px auto 0;
+          transform: rotate(2deg);
+        }
+      }
+      .shortname {
+        margin-top: 10px;
+        text-align: center;
+      }
+    }
+  }
+
+  .card {
+    background-color: var(--white);
+    border-radius: 10px;
+    margin-top: -20px;
+    padding: 10px;
+    padding-top: 20px;
+    position: relative;
+    :global(p) {
+      margin-bottom: 20px;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      background: grey;
+      height: 4px;
+      border-radius: 10px;
+      width: 40px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      opacity: 0.4;
+    }
+  }
+</style>

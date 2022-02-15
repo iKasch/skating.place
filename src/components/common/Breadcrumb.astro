@@ -1,0 +1,71 @@
+---
+const { url } = Astro.request
+
+const breadcrumb = url.pathname
+  .split("/")
+  .filter(Boolean)
+  .map((path, index) => {
+    const newUrl = `/${url.pathname
+      .split("/")
+      .filter(Boolean)
+      .slice(0, index + 1)
+      .join("/")}`
+    return {
+      name: path.replace(/^\w/, (c) => c.toUpperCase()), // capitalize first letter
+      url: newUrl,
+    }
+  })
+---
+
+<nav>
+  <ul>
+    <li class="home"><a href="/">LP</a></li>
+    {breadcrumb.map(({ name, url }) => (
+      <li key={url}>
+        <a href={url}>{name}</a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<style lang="scss">
+  nav {
+    padding-top: 10px;
+    width: 100%;
+    font-size: 16px;
+    overflow-x: scroll;
+    ul {
+      display: flex;
+      padding: 0;
+      padding-left: 10px;
+      margin: 0;
+      list-style: none;
+      align-items: center;
+      li {
+        display: flex;
+        margin-right: 10px;
+        align-items: center;
+        a {
+          color: #333;
+          text-decoration: none;
+          &:hover {
+            color: #000;
+          }
+
+          text-decoration: none;
+        }
+        &:after {
+          content: "ᐳ";
+          margin-left: 10px;
+          display: inline;
+          color: #333;
+        }
+        &:last-child {
+          &:after {
+            content: "";
+          }
+        }
+      }
+    }
+  }
+</style>
