@@ -18,7 +18,7 @@ const { name, shortname, image, city, content } = spot
 ---
 
 <SkateSpotLayout title={`${name} | ${city} | Skating Places`}>
-  <div class="spot" style="background-image: url(${image});">
+  <div class="spotImage" style="background-image: url(${image});">
     <Breadcrumb />
     <div class="title">
       <div class="name">
@@ -26,57 +26,36 @@ const { name, shortname, image, city, content } = spot
       </div>
       <div class="shortname">{shortname}</div>
     </div>
-    <div class="card">
-      {content.html}
-      <a href="#" target="_blank">Karte</a>
-    </div>
+  </div>
+  <div class="card">
+    {content.html}
+    <a href="#" target="_blank">Karte</a>
   </div>
 </SkateSpotLayout>
 
 <style lang="scss">
-  .spot {
+  .spotImage {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
-    width: 100vw;
+    height: 50vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-
-    .card {
-      /* height: 100px; */
-      background-color: white;
-      border-radius: 10px;
-      margin: 5px;
-      padding: 10px;
-      padding-top: 20px;
-      position: relative;
-      :global(p) {
-        margin-bottom: 20px;
-      }
-      &:before {
-        content: "";
-        position: absolute;
-        top: 10px;
-        background: grey;
-        height: 4px;
-        border-radius: 10px;
-        width: 40px;
-        left: 0;
-        right: 0;
-        margin: auto;
-        opacity: 0.4;
-      }
-    }
 
     .title {
       display: flex;
       flex-flow: column;
       font-family: Comfortaa;
+      margin-top: auto;
+      margin-bottom: auto;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-image: url("/assets/gfx/stroke.svg");
+      padding: 25px 0;
       .name {
         text-align: center;
-        font-size: 30px;
+        font-size: 26px;
         &.light {
           color: #fff;
         }
@@ -99,6 +78,31 @@ const { name, shortname, image, city, content } = spot
         margin-top: 10px;
         text-align: center;
       }
+    }
+  }
+
+  .card {
+    background-color: var(--white);
+    border-radius: 10px;
+    margin-top: -20px;
+    padding: 10px;
+    padding-top: 20px;
+    position: relative;
+    :global(p) {
+      margin-bottom: 20px;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      background: grey;
+      height: 4px;
+      border-radius: 10px;
+      width: 40px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      opacity: 0.4;
     }
   }
 </style>
