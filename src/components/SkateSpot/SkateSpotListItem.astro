@@ -1,8 +1,20 @@
 ---
+export interface Props {
+  spot: {
+    name: string
+    shortname: string
+    image: string
+    city: string
+    notListed: boolean
+  }
+}
+
 const { spot } = Astro.props
+
+const url = `/${spot.city.toLowerCase()}/${spot.name.toLowerCase()}`
 ---
 
-<a href={spot.url} class="skateSpot" style="background-image: url(${spot.image});">
+<a href={url} class="skateSpot" style="background-image: url(${spot.image});">
   <span class="title">
     {spot.name}
   </span>
